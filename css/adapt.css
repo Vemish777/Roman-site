@@ -448,27 +448,20 @@
 @media (max-width: 1290px) and (orientation: landscape) {
   nav ul.mobile-menu {
     height: 160vh;
-  }
-
-  nav ul.mobile-menu li {
-    margin: 0 !important;
-    padding: 0 !important;
+    padding-left: 0; /* Убираем внутренний отступ слева */
+    padding-right: 0; /* Убираем внутренний отступ справа */
+    left: 0; /* Убедиться, что меню у левого края */
   }
 
   .menu-icon {
-    margin: 0 !important;
-    padding: 0 !important;
+    left: 0; /* Смещаем бургер к левому краю */
+    transform: translate(0, -50%); /* Убираем сдвиг по оси X */
+    margin-left: 16px; /* Немного отступа слева для визуального комфорта */
   }
 
-  .menu-icon + nav ul.mobile-menu {
-    margin-top: 0 !important;
-  }
-
+  /* Если нужно, чтобы пункт "Home" был без отступов слева */
   nav ul.mobile-menu li:first-child {
-    margin-top: 0 !important;
-  }
-
-  nav {
-    margin-top: 0 !important;
+    margin-left: 0;
+    padding-left: 0;
   }
 }
