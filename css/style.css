@@ -1,0 +1,252 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Instrument Sans", "Instrument Sans Placeholder", sans-serif;
+  background-color: rgb(255, 255, 255);
+}
+
+main,
+header#nav {
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* ====== Header ====== */
+header#nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+  height: 118px;
+  transition: top 0.3s ease;
+}
+
+.nav-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 40px;
+  position: relative;
+}
+
+.email {
+  width: 225px;
+  height: 28px;
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: rgba(29, 29, 31, 0.6);
+  font-family: "Instrument Sans", sans-serif;
+  justify-content: flex-start;
+  text-decoration: none;
+  margin-top: 12px;
+}
+
+/* ====== Desktop Menu ====== */
+nav ul.desktop-menu {
+  display: flex;
+  gap: 20px;
+}
+
+nav ul.desktop-menu li a {
+  font-size: 16px;
+  font-family: "Instrument Sans", sans-serif;
+  transition: color 0.3s;
+}
+
+nav ul.desktop-menu li a:hover {
+  color: #f90;
+}
+
+/* ====== Иконка меню (бургер) ====== */
+.menu-icon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1200;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 27px;
+  height: 19px;
+}
+
+.menu-icon.open .line:nth-child(1) {
+  transform: rotate(45deg);
+  position: absolute;
+  top: 10px; /* Центр кнопки */
+}
+
+.menu-icon.open .line:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-icon.open .line:nth-child(3) {
+  transform: rotate(-45deg);
+  position: absolute;
+  top: 10px; /* Центр кнопки */
+}
+
+.menu-icon .line {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: black;
+  border-radius: 2px;
+}
+.menu-icon .line:nth-child(1) {
+  top: 4px;
+}
+
+.menu-icon .line:nth-child(2) {
+  top: 10px;
+}
+
+.menu-icon .line:nth-child(3) {
+  top: 16px;
+}
+
+/* ====== Мобильное меню ====== */
+.mobile-menu {
+  opacity: 0; /* Скрыто */
+  pointer-events: none; /* Блокируем взаимодействие */
+  transform: translateY(-100%); /* Меню скрыто за экраном */
+  transition: transform 0.4s ease, opacity 0.5s ease;
+}
+
+.mobile-menu.open {
+  opacity: 1; /* Меню видно */
+  pointer-events: auto; /* Разрешаем взаимодействие */
+  transform: translateY(0); /* Меню появляется на экране */
+}
+
+nav ul.mobile-menu {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 60vh;
+  width: 100%;
+  background: linear-gradient(to right, #a0a0a0, #e0e0e0);
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-100%);
+  transition: transform 0.4s ease-in-out, opacity 0.3s ease;
+  z-index: 1100;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  list-style-type: none;
+}
+
+nav ul.mobile-menu.open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+nav ul.mobile-menu li {
+  margin: 15px 0;
+  text-align: center;
+  font-weight: bold;
+}
+
+nav ul.mobile-menu li a,
+nav ul.mobile-menu li button {
+  font-size: 25px;
+  font-family: "Instrument Sans", sans-serif;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: black;
+  text-decoration: none;
+}
+
+nav ul.mobile-menu li a:hover,
+nav ul.mobile-menu li button:hover {
+  color: rgb(128, 128, 0);
+}
+@media (max-width: 1024px) {
+  .nav-container {
+    padding: 0 24px;
+  }
+
+  .email {
+    font-size: 18px;
+    width: auto;
+  }
+
+  nav ul.desktop-menu {
+    display: none; /* скрываем десктопное меню */
+  }
+
+  .menu-icon {
+    display: flex !important; /* отображаем бургер-меню */
+  }
+}
+
+/* Мобильные устройства (макс. ширина 768px) */
+@media (max-width: 768px) {
+  header#nav {
+    height: 90px;
+  }
+
+  .email {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+
+  .menu-icon {
+    width: 24px;
+    height: 16px;
+  }
+
+  .menu-icon .line {
+    height: 2px;
+  }
+
+  nav ul.mobile-menu {
+    height: 60vh;
+    font-size: 22px;
+  }
+
+  nav ul.mobile-menu li a,
+  nav ul.mobile-menu li button {
+    font-size: 22px;
+  }
+}
+
+/* Очень маленькие экраны (макс. ширина 480px) */
+@media (max-width: 480px) {
+  .nav-container {
+    padding: 0 16px;
+  }
+
+  .email {
+    font-size: 14px;
+  }
+
+  nav ul.mobile-menu li a,
+  nav ul.mobile-menu li button {
+    font-size: 20px;
+  }
+}

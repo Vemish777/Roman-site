@@ -1,0 +1,685 @@
+/* ====== Main ====== */
+main {
+  height: auto;
+  overflow: visible;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: white;
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+  min-height: 100vh;
+}
+.hero {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero h1 {
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 120px;
+  letter-spacing: -4px;
+}
+
+.hero p {
+  max-width: 400px;
+  font-size: 2.1rem;
+}
+
+.hero h1 span {
+  display: block;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+.about-book {
+  max-width: 1800px; /* ширина раскрытой книги */
+  height: auto;
+  min-height: 600px;
+  perspective: 1500px;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.about-book__inner {
+  width: 100%;
+  height: auto;
+  min-height: 600px;
+  overflow: visible !important;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Обложка */
+.about-book__front {
+  width: 100%;
+  height: auto;
+  min-height: 600px;
+  background: linear-gradient(to right, #a0a0a0, #e0e0e0);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Georgia", serif;
+  font-size: 4rem;
+  font-weight: 700;
+  color: #4a4031;
+  user-select: none;
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Обратная сторона — твой контент */
+.about-book__back {
+  width: 100%;
+  height: auto;
+  min-height: 600px;
+  overflow: visible !important;
+  background: #fff;
+  border-radius: 12px;
+  box-sizing: border-box;
+  display: flex;
+  gap: 40px;
+  padding: 40px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  font-family: "Georgia", serif;
+  color: #4a4031;
+  overflow: hidden;
+  flex-direction: row;
+}
+
+/* Левая часть - фото */
+.about {
+  flex: 0 0 50%;
+  height: auto;
+  min-height: 600px;
+  background-image: url("/img/IMG_6909.jpeg"); /* твой путь */
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 12px;
+  box-shadow: inset 5px 0 12px -4px rgba(0, 0, 0, 0.1);
+  min-height: 300px;
+}
+
+/* Правая часть - текст */
+.info {
+  flex: 1;
+  background: linear-gradient(to right, #a0a0a0, #e0e0e0);
+  border-radius: 12px;
+  padding: 50px 60px;
+  box-shadow: inset 5px 0 12px -4px rgba(0, 0, 0, 0.05);
+  font-size: 1.2rem;
+  line-height: 1.7;
+  display: flex;
+  align-items: center;
+  overflow-y: auto;
+  height: auto;
+  overflow-y: visible;
+}
+
+.info ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.info ul li {
+  margin-bottom: 20px;
+  text-indent: 2em;
+  font-weight: 500;
+}
+
+/* Переворот книги при открытии */
+.about-book.open .about-book__inner {
+  transform: rotateY(180deg);
+}
+
+/* Адаптив */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    max-width: 95%;
+    min-height: auto;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  }
+
+  .about {
+    flex: none;
+    height: 350px;
+    border-radius: 12px 12px 0 0;
+    border-right: none;
+    border-bottom: 2px solid #d2c7b5;
+    box-shadow: inset 0 -5px 12px -4px rgba(0, 0, 0, 0.1);
+  }
+
+  .info {
+    border-radius: 0 0 12px 12px;
+    padding: 30px 25px;
+    box-shadow: none;
+    color: #3e3e3e;
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: justify;
+  }
+
+  .info ul li {
+    margin-bottom: 15px;
+    text-indent: 0;
+  }
+}
+.work {
+  width: 100%;
+  height: 150px;
+  margin-top: 100px;
+}
+@media (max-width: 600px) {
+  .about-book {
+    margin-bottom: 30px;
+  }
+}
+.work h2 {
+  font-family: "Instrument Sans", "Instrument Sans Placeholder", sans-serif;
+  font-size: 6rem;
+  margin: 0;
+  text-transform: uppercase;
+  color: rgb(29, 29, 31);
+  font-weight: 700;
+  flex: 0 0 auto; /* заголовок занимает минимально необходимую ширину */
+  text-align: center;
+  padding-top: 50px;
+}
+
+/* Основная стилизация для галереи */
+.gallery {
+  width: 100%; /* на всю ширину окна */
+  overflow: hidden; /* прячем выходящее */
+  box-sizing: border-box;
+  margin-top: 50px;
+}
+
+.gallery-track-1,
+.gallery-track-2 {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 20px;
+  height: 520px;
+  width: max-content; /* ширина по содержимому */
+
+  /* Запускаем анимацию прокрутки слева направо */
+  animation: scroll 40s linear infinite;
+
+  /* Начинаем сдвиг с середины (на половину ширины содержимого) */
+  transform: translateX(-50%);
+}
+.gallery-track-2 {
+  animation-name: scroll-reverse;
+}
+.gallery-track-1 img,
+.gallery-track-2 img {
+  height: 520px;
+  flex-shrink: 0;
+  object-fit: cover;
+  user-select: none;
+}
+
+/* Анимация сдвига */
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+@keyframes scroll-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+.lightbox {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-size: 50px;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+}
+.book {
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* Чтобы кнопка и текст шли вертикально */
+  align-items: center; /* Центрируем по горизонтали */
+  gap: 20px; /* Расстояние между кнопкой и текстом */
+  margin-top: 50px;
+}
+
+.book-info {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 60px;
+  padding-right: 60px;
+  transition: max-height 0.6s ease, opacity 0.6s ease, padding 0.6s ease;
+  background: linear-gradient(to right, #a0a0a0, #e0e0e0);
+  border-radius: 12px;
+  box-shadow: inset 5px 0 12px -4px rgba(0, 0, 0, 0.05);
+  color: #4a4031;
+  font-size: 1.2rem;
+  line-height: 1.7;
+  position: relative;
+  display: block; /* <-- ключевой момент */
+  pointer-events: none;
+}
+
+.book-btn {
+  width: 400px;
+  height: 100px;
+  background-color: #1d1d1f;
+  color: white;
+  font-family: "Inter Tight", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  text-transform: uppercase;
+  border-radius: 100px;
+  border: 2px solid black;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.4s ease, border-color 0.4s ease;
+}
+
+.book-btn::before {
+  content: "";
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: -1;
+  transition: bottom 0.1s ease;
+}
+
+@media (max-width: 768px) {
+  .book-btn {
+    width: 300px; /* Размер кнопки для мобильных */
+    height: 80px; /* Высота для мобильных */
+    font-size: 16px; /* Меньший шрифт для мобильных */
+  }
+
+  .book-btn.active {
+    background-color: white; /* Белый фон при активации */
+    color: black; /* Черный текст */
+    border-color: black; /* Черная рамка */
+  }
+}
+
+/* Эффект при нажатии */
+.book-btn:active {
+  background-color: white; /* Белый фон при нажатии */
+  color: black; /* Черный текст */
+  border-color: black; /* Черная рамка */
+}
+.book-btn span {
+  position: relative;
+  z-index: 1;
+  color: white;
+  transition: color 0.4s ease;
+}
+
+/* Active для сенсорных устройств */
+.book-btn:active span {
+  color: black !important;
+  border-color: white !important;
+}
+
+.book-btn:active::before {
+  bottom: 0 !important;
+  background-color: white !important;
+}
+.book-btn.active {
+  color: black !important;
+  border-color: black !important;
+}
+
+.book-btn.active::before {
+  bottom: 0 !important;
+  background-color: white !important;
+}
+
+.book-btn.active span {
+  color: black !important;
+}
+.book-btn span {
+  position: relative;
+  z-index: 1;
+  color: white;
+  transition: color 0.4s ease, -webkit-text-stroke 0.4s ease;
+}
+
+.book-btn:hover::before {
+  bottom: 0;
+}
+
+.book-btn:hover span {
+  color: black;
+}
+.book-btn.mobile-book-btn {
+  display: none;
+  margin: 20px auto 0;
+  background: #f90;
+  color: #111;
+  border-radius: 100px;
+  padding: 12px 25px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-family: "Inter Tight", sans-serif;
+}
+.book-info.active {
+  max-height: 500px; /* Достаточно большое значение */
+  opacity: 1;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  pointer-events: auto;
+  color: rgb(29, 29, 31);
+}
+.book-info:not(.active) {
+  pointer-events: none; /* Блокируем взаимодействие с элементом, когда он не активен */
+}
+
+.faq {
+  width: 100%;
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.faq h2 {
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 6rem;
+  margin: 0 0 40px;
+  text-transform: uppercase;
+  color: rgb(29, 29, 31);
+  font-weight: 700;
+}
+
+#faq .item {
+  width: 100%;
+  max-width: 850px;
+  margin-bottom: 20px;
+  text-align: left;
+  border-radius: 8px;
+  overflow: hidden;
+  background: linear-gradient(to right, #a0a0a0, #e0e0e0);
+  transition: background-color 0.3s ease;
+}
+
+#faq .question {
+  padding: 20px 30px;
+  font-weight: 550;
+  cursor: pointer;
+  position: relative;
+  font-size: 24px;
+  color: rgb(29, 29, 31);
+}
+
+#faq .question::after {
+  content: "+";
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  transition: transform 0.3s ease;
+}
+
+#faq .item.active .question::after {
+  content: "-";
+  transform: translateY(-50%) rotate(180deg);
+}
+
+#faq .answer {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  padding: 0 30px;
+  transition: max-height 0.4s ease, opacity 0.4s ease, padding-top 0.4s ease,
+    padding-bottom 0.4s ease;
+  padding-top: 0;
+  padding-bottom: 0;
+  font-size: 18px;
+  color: rgb(29, 29, 31);
+}
+.answer li {
+  margin-bottom: 12px;
+  color: rgb(29, 29, 31);
+  font-size: 18px;
+}
+
+#faq .item.active .answer {
+  opacity: 1;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+@keyframes scroll-left {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.answer-info {
+  text-align: center;
+  list-style-type: none;
+}
+.nowrap {
+  white-space: nowrap;
+  text-align: right;
+  display: block;
+}
+/* ====== Contact ====== */
+.contact form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 0 auto; /* Центрируем форму */
+}
+
+.contact input,
+.contact textarea {
+  background: #222;
+  border: 1px solid #444;
+  border-radius: 6px;
+  padding: 10px;
+  margin-bottom: 15px;
+  color: #eee;
+  font-size: 16px;
+  resize: vertical;
+}
+
+.contact button[type="submit"] {
+  background: #f90;
+  border: none;
+  color: #111;
+  font-weight: 700;
+  padding: 12px;
+  border-radius: 100px;
+  cursor: pointer;
+  font-family: "Inter Tight", sans-serif;
+  text-transform: uppercase;
+  font-size: 16px;
+  transition: opacity 0.3s;
+}
+
+.contact button[type="submit"]:hover {
+  opacity: 0.85;
+}
+.contact-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+  gap: 40px;
+  flex-wrap: wrap;
+  border-top: 1px solid rgba(0, 0, 0, 0.16);
+}
+
+.contact-text,
+.contact-map {
+  flex: 1 1 300px;
+  max-width: 500px;
+  position: relative;
+}
+
+.contact-text h2 {
+  font-size: 30px;
+  margin-bottom: 15px;
+  font-family: "Hind Siliguri";
+}
+.contact-text span {
+  font-size: 20px;
+  margin: 8px 0;
+}
+.contact-text p {
+  font-size: 30px;
+  margin: 8px 0;
+}
+
+.divider {
+  width: 1px;
+  background-color: black;
+  height: 250px;
+}
+
+.contact-map iframe {
+  width: 100%;
+  height: 250px;
+  border: 0;
+}
+.contact-map .map-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 98%;
+  background-color: rgba(0, 0, 0, 0.11);
+  pointer-events: none;
+  max-width: 500px;
+}
+@media (max-width: 768px) {
+  .divider {
+    width: 100%;
+    height: 1px;
+  }
+}
+.site-footer {
+  background: black;
+  color: #eee;
+  padding: 40px 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.footer-logo img {
+  height: 60px;
+  margin-bottom: 20px;
+}
+
+.footer-slogan {
+  font-size: 30px;
+  font-weight: 300;
+  margin-bottom: 20px;
+  font-family: "GFS Neohellenic", Arial, sans-serif;
+}
+
+.footer-social {
+  margin-bottom: 30px;
+}
+
+.instagram-icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid whitesmoke;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  /* чтобы плавно менялся цвет и положение */
+}
+
+.instagram-icon:hover {
+  border: 2px solid white;
+  transform: translateY(-5px); /* поднимает на 5px */
+}
+
+.footer-separator {
+  border: none;
+  border-top: 1px solid #444;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto 15px auto;
+}
+
+.footer-copy {
+  font-size: 14px;
+  color: #666;
+}
