@@ -1,4 +1,3 @@
-/* ====== Main ====== */
 main {
   height: auto;
   overflow: visible;
@@ -44,7 +43,7 @@ body {
 }
 
 .about-book {
-  max-width: 1800px; /* ширина раскрытой книги */
+  max-width: 1800px;
   height: auto;
   min-height: 600px;
   perspective: 1500px;
@@ -64,7 +63,6 @@ body {
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
 
-/* Обложка */
 .about-book__front {
   width: 100%;
   height: auto;
@@ -85,7 +83,6 @@ body {
   left: 0;
 }
 
-/* Обратная сторона — твой контент */
 .about-book__back {
   width: 100%;
   height: auto;
@@ -109,12 +106,11 @@ body {
   flex-direction: row;
 }
 
-/* Левая часть - фото */
 .about {
   flex: 0 0 50%;
   height: auto;
   min-height: 600px;
-  background-image: url("../img/IMG_6909.jpeg"); /* твой путь */
+  background-image: url("../img/IMG_6909.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 12px;
@@ -122,7 +118,6 @@ body {
   min-height: 300px;
 }
 
-/* Правая часть - текст */
 .info {
   flex: 1;
   background: linear-gradient(to right, #a0a0a0, #e0e0e0);
@@ -151,12 +146,10 @@ body {
   font-weight: 500;
 }
 
-/* Переворот книги при открытии */
 .about-book.open .about-book__inner {
   transform: rotateY(180deg);
 }
 
-/* Адаптив */
 @media (max-width: 900px) {
   .container {
     flex-direction: column;
@@ -208,15 +201,14 @@ body {
   text-transform: uppercase;
   color: rgb(29, 29, 31);
   font-weight: 700;
-  flex: 0 0 auto; /* заголовок занимает минимально необходимую ширину */
+  flex: 0 0 auto;
   text-align: center;
   padding-top: 50px;
 }
 
-/* Основная стилизация для галереи */
 .gallery {
-  width: 100%; /* на всю ширину окна */
-  overflow: hidden; /* прячем выходящее */
+  width: 100%;
+  overflow: hidden;
   box-sizing: border-box;
   margin-top: 50px;
 }
@@ -227,12 +219,10 @@ body {
   display: flex;
   gap: 20px;
   height: 520px;
-  width: max-content; /* ширина по содержимому */
+  width: max-content;
 
-  /* Запускаем анимацию прокрутки слева направо */
   animation: scroll 40s linear infinite;
 
-  /* Начинаем сдвиг с середины (на половину ширины содержимого) */
   transform: translateX(-50%);
 }
 .gallery-track-2 {
@@ -246,7 +236,6 @@ body {
   user-select: none;
 }
 
-/* Анимация сдвига */
 @keyframes scroll {
   0% {
     transform: translateX(0%);
@@ -294,9 +283,9 @@ body {
 .book {
   width: 100%;
   display: flex;
-  flex-direction: column; /* Чтобы кнопка и текст шли вертикально */
-  align-items: center; /* Центрируем по горизонтали */
-  gap: 20px; /* Расстояние между кнопкой и текстом */
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
   margin-top: 50px;
 }
 
@@ -316,7 +305,7 @@ body {
   font-size: 1.2rem;
   line-height: 1.7;
   position: relative;
-  display: block; /* <-- ключевой момент */
+  display: block;
   pointer-events: none;
 }
 
@@ -355,23 +344,22 @@ body {
 
 @media (max-width: 768px) {
   .book-btn {
-    width: 300px; /* Размер кнопки для мобильных */
-    height: 80px; /* Высота для мобильных */
-    font-size: 16px; /* Меньший шрифт для мобильных */
+    width: 300px;
+    height: 80px;
+    font-size: 16px;
   }
 
   .book-btn.active {
-    background-color: white; /* Белый фон при активации */
-    color: black; /* Черный текст */
-    border-color: black; /* Черная рамка */
+    background-color: white;
+    color: black;
+    border-color: black;
   }
 }
 
-/* Эффект при нажатии */
 .book-btn:active {
-  background-color: white; /* Белый фон при нажатии */
-  color: black; /* Черный текст */
-  border-color: black; /* Черная рамка */
+  background-color: white;
+  color: black;
+  border-color: black;
 }
 .book-btn span {
   position: relative;
@@ -380,7 +368,6 @@ body {
   transition: color 0.4s ease;
 }
 
-/* Active для сенсорных устройств */
 .book-btn:active span {
   color: black !important;
   border-color: white !important;
@@ -430,7 +417,7 @@ body {
   font-family: "Inter Tight", sans-serif;
 }
 .book-info.active {
-  max-height: 500px; /* Достаточно большое значение */
+  max-height: 500px;
   opacity: 1;
   padding-top: 50px;
   padding-bottom: 50px;
@@ -438,7 +425,7 @@ body {
   color: rgb(29, 29, 31);
 }
 .book-info:not(.active) {
-  pointer-events: none; /* Блокируем взаимодействие с элементом, когда он не активен */
+  pointer-events: none;
 }
 
 .faq {
@@ -534,12 +521,12 @@ body {
   text-align: right;
   display: block;
 }
-/* ====== Contact ====== */
+
 .contact form {
   display: flex;
   flex-direction: column;
   max-width: 400px;
-  margin: 0 auto; /* Центрируем форму */
+  margin: 0 auto;
 }
 
 .contact input,
@@ -663,12 +650,11 @@ body {
   border: 1px solid whitesmoke;
   text-decoration: none;
   transition: background-color 0.3s ease, transform 0.3s ease;
-  /* чтобы плавно менялся цвет и положение */
 }
 
 .instagram-icon:hover {
   border: 2px solid white;
-  transform: translateY(-5px); /* поднимает на 5px */
+  transform: translateY(-5px);
 }
 
 .footer-separator {

@@ -19,7 +19,6 @@ header#nav {
   margin: 0 auto;
 }
 
-/* ====== Header ====== */
 header#nav {
   position: fixed;
   top: 0;
@@ -55,7 +54,6 @@ header#nav {
   margin-top: 12px;
 }
 
-/* ====== Desktop Menu ====== */
 nav ul.desktop-menu {
   display: flex;
   gap: 20px;
@@ -71,7 +69,6 @@ nav ul.desktop-menu li a:hover {
   color: #f90;
 }
 
-/* ====== Иконка меню (бургер) ====== */
 .menu-icon {
   position: absolute;
   left: 50%;
@@ -90,7 +87,7 @@ nav ul.desktop-menu li a:hover {
 .menu-icon.open .line:nth-child(1) {
   transform: rotate(45deg);
   position: absolute;
-  top: 10px; /* Центр кнопки */
+  top: 10px;
 }
 
 .menu-icon.open .line:nth-child(2) {
@@ -100,7 +97,7 @@ nav ul.desktop-menu li a:hover {
 .menu-icon.open .line:nth-child(3) {
   transform: rotate(-45deg);
   position: absolute;
-  top: 10px; /* Центр кнопки */
+  top: 10px;
 }
 
 .menu-icon .line {
@@ -124,18 +121,17 @@ nav ul.desktop-menu li a:hover {
   top: 16px;
 }
 
-/* ====== Мобильное меню ====== */
 .mobile-menu {
-  opacity: 0; /* Скрыто */
-  pointer-events: none; /* Блокируем взаимодействие */
-  transform: translateY(-100%); /* Меню скрыто за экраном */
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-100%);
   transition: transform 0.4s ease, opacity 0.5s ease;
 }
 
 .mobile-menu.open {
-  opacity: 1; /* Меню видно */
-  pointer-events: auto; /* Разрешаем взаимодействие */
-  transform: translateY(0); /* Меню появляется на экране */
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
 }
 
 nav ul.mobile-menu {
@@ -196,15 +192,14 @@ nav ul.mobile-menu li button:hover {
   }
 
   nav ul.desktop-menu {
-    display: none; /* скрываем десктопное меню */
+    display: none;
   }
 
   .menu-icon {
-    display: flex !important; /* отображаем бургер-меню */
+    display: flex !important;
   }
 }
 
-/* Мобильные устройства (макс. ширина 768px) */
 @media (max-width: 768px) {
   header#nav {
     height: 90px;
@@ -235,7 +230,6 @@ nav ul.mobile-menu li button:hover {
   }
 }
 
-/* Очень маленькие экраны (макс. ширина 480px) */
 @media (max-width: 480px) {
   .nav-container {
     padding: 0 16px;

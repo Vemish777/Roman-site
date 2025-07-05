@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (bookBtn && bookInfo) {
     // Переключение активного состояния кнопки и блока информации
     bookBtn.addEventListener("click", (e) => {
-      e.stopPropagation(); // чтобы клик не всплывал на document
+      e.stopPropagation();
 
       // Переключаем активный класс на кнопке
       bookBtn.classList.toggle("active");
@@ -104,11 +104,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // При клике на кнопку, меняем цвет кнопки (можно дополнительно анимировать)
       if (bookBtn.classList.contains("active")) {
-        bookBtn.style.backgroundColor = "#ffffff"; // Белый фон
-        bookBtn.style.color = "#000000"; // Черный текст
+        bookBtn.style.backgroundColor = "#ffffff";
+        bookBtn.style.color = "#000000";
       } else {
-        bookBtn.style.backgroundColor = "#1d1d1f"; // Черный фон
-        bookBtn.style.color = "#ffffff"; // Белый текст
+        bookBtn.style.backgroundColor = "#1d1d1f";
+        bookBtn.style.color = "#ffffff";
       }
     });
 
