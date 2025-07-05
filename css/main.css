@@ -114,7 +114,7 @@ body {
   flex: 0 0 50%;
   height: auto;
   min-height: 600px;
-  background-image: url("/img/IMG_6909.jpeg"); /* твой путь */
+  background-image: url("img/IMG_6909.jpeg"); /* твой путь */
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 12px;
