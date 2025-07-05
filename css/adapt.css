@@ -448,20 +448,28 @@
 @media (max-width: 1290px) and (orientation: landscape) {
   nav ul.mobile-menu {
     height: 160vh;
-    padding-left: 0; /* Убираем внутренний отступ слева */
-    padding-right: 0; /* Убираем внутренний отступ справа */
-    left: 0; /* Убедиться, что меню у левого края */
+    width: 90vw; /* Сделать меню уже, чтобы "Home" сдвинулся правее */
+    max-width: 500px; /* Максимальная ширина для ограничения */
+    padding-left: 16px; /* Немного padding слева для отступа */
+    padding-right: 16px;
+    left: 50%; /* Центрируем меню относительно экрана */
+    transform: translateX(
+      -40%
+    ); /* Сдвигаем меню чуть левее центра, чтобы "Home" подвинулся ближе к крестику */
   }
 
   .menu-icon {
-    left: 0; /* Смещаем бургер к левому краю */
-    transform: translate(0, -50%); /* Убираем сдвиг по оси X */
-    margin-left: 16px; /* Немного отступа слева для визуального комфорта */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Оставляем крестик в центре */
+    margin-left: 0; /* Убираем margin */
   }
 
-  /* Если нужно, чтобы пункт "Home" был без отступов слева */
   nav ul.mobile-menu li:first-child {
     margin-left: 0;
     padding-left: 0;
+  }
+
+  nav ul.mobile-menu li {
+    margin: 5px 0; /* Уменьшаем вертикальные отступы между пунктами */
   }
 }
