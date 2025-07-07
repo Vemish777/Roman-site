@@ -142,7 +142,7 @@ body {
 
 .info {
   flex: 1;
-  background: linear-gradient(to right, #a0a0a0, #e0e0e0);
+  background: linear-gradient(to bottom, #dcdcdc, #ffffff);
   border-radius: 12px;
   padding: 50px 60px;
   box-shadow: inset 5px 0 12px -4px rgba(0, 0, 0, 0.05);
@@ -619,16 +619,15 @@ body {
 .inst-button {
   width: 200px;
   height: 50px;
-  color: black;
+  color: white;
   font-weight: 700;
   font-size: 18px;
-  background: linear-gradient(to bottom, #dcdcdc, #ffffff);
+  background-color: rgb(29, 29, 31);
   border-radius: 100px;
   border: 2px solid black;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: white;
   cursor: pointer;
   margin-top: 15px;
   text-decoration: none;
@@ -636,7 +635,7 @@ body {
 }
 .inst-button:active {
   transform: scale(0.97);
-  background: linear-gradient(to bottom, #c0c0c0, #eaeaea);
+  background: black;
 }
 .divider {
   width: 1px;
