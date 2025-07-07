@@ -138,15 +138,15 @@ nav ul.mobile-menu {
   overflow-y: auto;
   display: flex;
   -webkit-overflow-scrolling: touch;
-  max-height: 100vh; /* не больше высоты экрана */
+  max-height: 100vh;
   flex-direction: column;
   position: fixed;
   top: 0;
   left: 0;
-  height: auto; /* авто, чтобы max-height работал */
+  height: auto;
   width: 100%;
   background: linear-gradient(to bottom, #dcdcdc, #ffffff);
-  justify-content: flex-start; /* пункты сверху */
+  justify-content: flex-start;
   align-items: center;
   transform: translateY(-100%);
   transition: transform 0.4s ease-in-out, opacity 0.3s ease;
@@ -155,7 +155,7 @@ nav ul.mobile-menu {
   border-bottom-right-radius: 20px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   list-style-type: none;
-  padding-top: 50px; /* отступ сверху — чтобы не мешал крестик */
+  padding-top: 70px;
   margin: 0;
 }
 
