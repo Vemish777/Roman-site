@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // === Поведение шапки при прокрутке ===
   let prevScroll = window.pageYOffset;
   const header = document.getElementById("nav");
   const headerHeight = header.offsetHeight;
@@ -16,7 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
     prevScroll = currentScroll;
   });
 
-  // === Инициализация AOS ===
   const isSmallScreen = window.innerWidth <= 900;
   const prefersReducedMotion = window.matchMedia(
     "(prefers-reduced-motion: reduce)"
@@ -28,7 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
     once: false,
   });
 
-  // === Бургер-меню ===
   const burger = document.getElementById("burger");
   const mobileMenu = document.getElementById("navLinks");
   const mobileLinks = mobileMenu.querySelectorAll("a, button");
@@ -57,7 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // === FAQ ===
   const items = document.querySelectorAll("#faq .item");
 
   items.forEach((item) => {
@@ -87,22 +83,17 @@ document.addEventListener("DOMContentLoaded", () => {
     answer.style.opacity = "0";
   });
 
-  // === "How to book" кнопка ===
   const bookBtn = document.getElementById("bookBtn");
   const bookInfo = document.querySelector(".book-info");
 
   if (bookBtn && bookInfo) {
-    // Переключение активного состояния кнопки и блока информации
     bookBtn.addEventListener("click", (e) => {
       e.stopPropagation();
 
-      // Переключаем активный класс на кнопке
       bookBtn.classList.toggle("active");
 
-      // Переключаем активный класс на блоке информации
       bookInfo.classList.toggle("active");
 
-      // При клике на кнопку, меняем цвет кнопки (можно дополнительно анимировать)
       if (bookBtn.classList.contains("active")) {
         bookBtn.style.backgroundColor = "#ffffff";
         bookBtn.style.color = "#000000";
@@ -112,20 +103,17 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // Закрытие блока информации, если кликнуть вне кнопки и блока
     document.addEventListener("click", (e) => {
       if (!bookBtn.contains(e.target) && !bookInfo.contains(e.target)) {
-        // Если клик был вне кнопки и блока информации
         bookBtn.classList.remove("active");
         bookInfo.classList.remove("active");
 
-        // Восстановление изначального цвета кнопки
         bookBtn.style.backgroundColor = "#1d1d1f";
         bookBtn.style.color = "#ffffff";
       }
     });
   }
-  // === About Book блок с изменяемой высотой ===
+
   const aboutBook = document.getElementById("about-book");
   const aboutBookInner = aboutBook.querySelector(".about-book__inner");
   const aboutBookBack = aboutBook.querySelector(".about-book__back");
@@ -160,7 +148,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // === Якоря с учётом шапки ===
   const OFFSET = header.offsetHeight;
 
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -181,7 +168,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // === Твой код для лайтбокса ===
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = lightbox.querySelector(".lightbox-img");
   const closeBtn = lightbox.querySelector(".lightbox-close");
@@ -207,7 +193,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // === Синхронизация анимации галереи ===
   window.addEventListener("load", () => {
     const track1 = document.querySelector(".gallery-track-1");
     const track2 = document.querySelector(".gallery-track-2");

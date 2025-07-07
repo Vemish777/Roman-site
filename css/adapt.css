@@ -363,7 +363,6 @@ nav ul.mobile-menu {
   overflow-y: auto;
 }
 
-/* 📱 Телефоны — портретная ориентация */
 @media (max-width: 768px) and (orientation: portrait) {
   nav ul.mobile-menu {
     height: 65vh;
@@ -371,26 +370,24 @@ nav ul.mobile-menu {
   }
 }
 
-/* 📱 Телефоны — ландшафтная ориентация */
 @media (max-width: 768px) and (orientation: landscape) {
   nav ul.mobile-menu {
-    height: 130vh; /* 130vh — избыточно, сожмём до 100vh */
+    height: 130vh;
     font-size: 20px;
-    padding-top: 50px; /* ближе к верху */
+    padding-top: 50px;
   }
 
   nav ul.mobile-menu li {
-    margin-bottom: 8px; /* уменьшаем расстояние между пунктами */
+    margin-bottom: 8px;
   }
 
   nav ul.mobile-menu li a,
   nav ul.mobile-menu li button {
-    padding: 6px 10px; /* уплотняем */
-    line-height: 1.2; /* плотнее строки */
+    padding: 6px 10px;
+    line-height: 1.2;
   }
 }
 
-/* 📲 Планшеты/ноутбуки — портрет */
 @media (min-width: 769px) and (max-width: 1024px) and (orientation: portrait) {
   nav ul.mobile-menu {
     height: 70vh;
@@ -398,18 +395,9 @@ nav ul.mobile-menu {
   }
 }
 
-/* 💻 Планшеты и ноутбуки — ландшафт */
 @media (min-width: 769px) and (max-width: 1280px) and (orientation: landscape) {
   nav ul.mobile-menu {
     height: 85vh;
     font-size: 26px;
-  }
-}
-
-/* 🖥️ Десктоп — fallback */
-@media (min-width: 1281px) {
-  nav ul.mobile-menu {
-    height: 60vh;
-    font-size: 24px;
   }
 }
