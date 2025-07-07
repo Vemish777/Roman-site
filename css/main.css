@@ -67,15 +67,14 @@ body {
   width: 100%;
   height: auto;
   min-height: 600px;
-  background: linear-gradient(to right, #a0a0a0, #e0e0e0);
+  background: linear-gradient(to bottom, #dcdcdc, #ffffff);
   border-radius: 12px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Georgia", serif;
   font-size: 4rem;
   font-weight: 700;
-  color: #4a4031;
+  color: black;
   user-select: none;
   backface-visibility: hidden;
   position: absolute;
@@ -105,7 +104,30 @@ body {
   overflow: hidden;
   flex-direction: row;
 }
+.about-button {
+  width: 400px;
+  height: 100px;
+  color: black;
+  font-weight: 700;
+  font-size: 18px;
+  background: linear-gradient(to bottom, #dcdcdc, #ffffff);
+  border-radius: 100px;
+  border: 2px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
 
+.about-button:hover {
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+}
+.about-button:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
 .about {
   flex: 0 0 50%;
   height: auto;
@@ -241,12 +263,12 @@ body {
     transform: translateX(0%);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(-25%);
   }
 }
 @keyframes scroll-reverse {
   0% {
-    transform: translateX(-50%);
+    transform: translateX(-25%);
   }
   100% {
     transform: translateX(0%);
@@ -298,7 +320,7 @@ body {
   padding-left: 60px;
   padding-right: 60px;
   transition: max-height 0.6s ease, opacity 0.6s ease, padding 0.6s ease;
-  background: linear-gradient(to right, #a0a0a0, #e0e0e0);
+  background: linear-gradient(to bottom, #dcdcdc, #ffffff);
   border-radius: 12px;
   box-shadow: inset 5px 0 12px -4px rgba(0, 0, 0, 0.05);
   color: #4a4031;
@@ -453,7 +475,7 @@ body {
   text-align: left;
   border-radius: 8px;
   overflow: hidden;
-  background: linear-gradient(to right, #a0a0a0, #e0e0e0);
+  background: linear-gradient(to bottom, #dcdcdc, #ffffff);
   transition: background-color 0.3s ease;
 }
 
@@ -588,7 +610,28 @@ body {
   font-size: 30px;
   margin: 8px 0;
 }
-
+.inst-button {
+  width: 200px;
+  height: 50px;
+  color: black;
+  font-weight: 700;
+  font-size: 18px;
+  background: linear-gradient(to bottom, #dcdcdc, #ffffff);
+  border-radius: 100px;
+  border: 2px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  cursor: pointer;
+  margin-top: 15px;
+  text-decoration: none;
+  transition: transform 0.1s ease, background 0.2s ease;
+}
+.inst-button:active {
+  transform: scale(0.97);
+  background: linear-gradient(to bottom, #c0c0c0, #eaeaea);
+}
 .divider {
   width: 1px;
   background-color: black;
