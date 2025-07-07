@@ -515,6 +515,12 @@ body {
   font-size: 18px;
   color: rgb(29, 29, 31);
 }
+.answer p {
+  margin-bottom: 12px;
+  color: rgb(29, 29, 31);
+  font-size: 18px;
+}
+
 .answer li {
   margin-bottom: 12px;
   color: rgb(29, 29, 31);
